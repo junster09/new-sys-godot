@@ -1,0 +1,37 @@
+63f7b34db8d8cdea90c76aacccf841ec
+::res://::1774988669
+export_presets.cfg::TextFile::-1::1774988669::0::1::::<><><>0<>0<><>::
+icon.svg::CompressedTexture2D::937358133820935308::1774306375::1774306379::1::::<><><>0<>0<>330bdcbf66ec65f7cc986b1716730fe8<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+main.tscn::PackedScene::2931791191197002220::1774853239::0::1::::<><><>0<>0<><>::uid://cik26vxhxu60y::::res://Scripts/Node Scripts/main.gd<>uid://e3ujbp4od08b::::res://Scripts/Node Scripts/Character_Sheet.gd<>uid://dprhgvnlbsxn::::res://Scripts/Node Scripts/Skill_Panel.gd<>uid://dot4vrk7lw6sw::::res://Styles/StressBoxPressed.tres<>uid://ylscn20om0ax::::res://Styles/StressBoxHovered.tres<>uid://d052it3tu2epd::::res://Scripts/Node Scripts/Create_Character_Sheet.gd<>uid://wall1qdl2ioq::::res://Scripts/Node Scripts/skill_roll_container.gd<>uid://csdek85gixg3j::::res://Scripts/Node Scripts/skill_rank_dropdown.gd
+::res://Exports/::1774988669
+main.apple-touch-icon.png::CompressedTexture2D::560451286163665427::1774988669::1774988676::1::::<><><>0<>0<>a57060826d5a98c8b1c5e000cc0f4471<>res://.godot/imported/main.apple-touch-icon.png-52f401700978aa5fbb456cad37261db2.ctex::
+main.icon.png::CompressedTexture2D::5507181416144218324::1774988669::1774988676::1::::<><><>0<>0<>1e6c6572cd778959ca451353f7ac7db5<>res://.godot/imported/main.icon.png-73f7d53a76da696e4ff2b0feab34ffd4.ctex::
+main.png::CompressedTexture2D::8568008997162494919::1774988669::1774988676::1::::<><><>0<>0<>7156df2e1deaa47f9e69247fb8d1d440<>res://.godot/imported/main.png-acadaaf4cc93a697e657fcf1f883f72f.ctex::
+NewSysGodot.apple-touch-icon.png::CompressedTexture2D::807583159634134652::1774988653::1774988676::1::::<><><>0<>0<>8fae98cf1874c994d29698ed22559384<>res://.godot/imported/NewSysGodot.apple-touch-icon.png-6f9f922363f96114fd4673af290af481.ctex::
+NewSysGodot.icon.png::CompressedTexture2D::3134266621226678300::1774988653::1774988676::1::::<><><>0<>0<>6d82f740453a9eb39869bc770938e210<>res://.godot/imported/NewSysGodot.icon.png-0aaa339eda6552fbb88c830920244ded.ctex::
+NewSysGodot.png::CompressedTexture2D::2661917460709595820::1774988653::1774988676::1::::<><><>0<>0<>7b9ec2f7a6ba093b22f77fb2378f2c93<>res://.godot/imported/NewSysGodot.png-c40c159c4baff8cd2f4de71c0a11ef60.ctex::
+::res://Prefabs/::1774818678
+skill_create_panel.tscn::PackedScene::5272007711087106119::1774816597::0::1::::<><><>0<>0<><>::uid://dsuua6irdc1ls::::res://Scripts/Node Scripts/Create_Skill_Panel.gd<>uid://csdek85gixg3j::::res://Scripts/Node Scripts/skill_rank_dropdown.gd
+skill_panel.tscn::PackedScene::7737172835455239171::1774818678::0::1::::<><><>0<>0<><>::uid://dprhgvnlbsxn::::res://Scripts/Node Scripts/Skill_Panel.gd
+::res://Scripts/::1774674152
+::res://Scripts/Data Scripts/::1774846639
+CharacterData.gd::GDScript::1952961471177041459::1774819865::0::1::::CharacterData<>RefCounted<><>0<>0<><>::
+CharacterSave.gd::GDScript::3642186755190518249::1774849078::0::1::::CharacterSave<>Node<><>0<>0<><>::
+ConsequenceData.gd::GDScript::8667094460421003965::1774330025::0::1::::ConsequenceData<>InvokableData<><>0<>0<><>::
+Constants.gd::GDScript::723134430633234444::1774852704::0::1::::<>Node<><>0<>0<><>::
+InvokableData.gd::GDScript::3260550444255089582::1774327075::0::1::::InvokableData<>RefCounted<><>0<>0<><>::
+SkillData.gd::GDScript::1975857763258291602::1774846639::0::1::::SkillData<>RefCounted<><>0<>0<><>::
+SkillRank.gd::GDScript::3415488723585531469::1774660475::0::1::::SkillRank<>RefCounted<><>0<>0<><>::
+UID_Database.gd::GDScript::1402691718995210854::1774675276::0::1::::<>Node<><>0<>0<><>::
+::res://Scripts/Node Scripts/::1774820483
+Character_Sheet.gd::GDScript::339788440698176927::1774852259::0::1::::<>MarginContainer<><>0<>0<><>::
+Create_Character_Sheet.gd::GDScript::8977569161897082249::1774850334::0::1::::<>MarginContainer<><>0<>0<><>::
+Create_Skill_Panel.gd::GDScript::8465164772859220944::1774676043::0::1::::<>Panel<><>0<>0<><>::
+main.gd::GDScript::5356691751317266326::1774851953::0::1::::<>Node<><>0<>0<><>::
+Skill_Panel.gd::GDScript::242577234845772667::1774739364::0::1::::<>Panel<><>0<>0<><>::
+skill_rank_dropdown.gd::GDScript::6042696191941981521::1774674624::0::1::::<>MenuButton<><>0<>0<><>::
+skill_roll_container.gd::GDScript::1544843481166148724::1774853155::0::1::::<>MarginContainer<><>0<>0<><>::
+::res://Styles/::1774659153
+StressBoxHovered.tres::StyleBoxFlat::1708337605733406875::1774659153::0::1::::<><><>0<>0<><>::
+StressBoxPressed.tres::StyleBoxFlat::8182928243615653590::1774659121::0::1::::<><><>0<>0<><>::
+::res://Themes/::1774651810
