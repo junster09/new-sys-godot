@@ -1,0 +1,862 @@
+[gd_scene format=3 uid="uid://bh1gf4rbqi6vg"]
+
+[ext_resource type="Script" uid="uid://cik26vxhxu60y" path="res://Scripts/Node Scripts/main.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://e3ujbp4od08b" path="res://Scripts/Node Scripts/Character_Sheet.gd" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://dprhgvnlbsxn" path="res://Scripts/Node Scripts/Skill_Panel.gd" id="3_h2yge"]
+[ext_resource type="StyleBox" uid="uid://dot4vrk7lw6sw" path="res://Styles/StressBoxPressed.tres" id="4_lquwl"]
+[ext_resource type="StyleBox" uid="uid://ylscn20om0ax" path="res://Styles/StressBoxHovered.tres" id="5_7mycd"]
+[ext_resource type="Script" uid="uid://d052it3tu2epd" path="res://Scripts/Node Scripts/Create_Character_Sheet.gd" id="6_7mycd"]
+[ext_resource type="Script" uid="uid://wall1qdl2ioq" path="res://Scripts/Node Scripts/skill_roll_container.gd" id="7_5vw27"]
+[ext_resource type="Script" uid="uid://csdek85gixg3j" path="res://Scripts/Node Scripts/skill_rank_dropdown.gd" id="7_272bh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ig7tw"]
+bg_color = Color(0, 0.38566673, 0.89, 0.5294118)
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xm2m"]
+bg_color = Color(0.48749998, 0.625625, 0.65, 1)
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h2yge"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_right = 3
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bvp3"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_272bh"]
+bg_color = Color(0.48749998, 0.625625, 0.65, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5vw27"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kek77"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4c57u"]
+
+[node name="Main" type="Node" unique_id=452397124 node_paths=PackedStringArray("charSheet", "createCharSheet")]
+script = ExtResource("1_ig7tw")
+charSheet = NodePath("Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Character Sheet Container")
+createCharSheet = NodePath("Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Create Character Container")
+metadata/CharSheet = NodePath("Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Character Sheet Container")
+
+[node name="Root" type="Control" parent="." unique_id=281037632]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="Root" unique_id=2114864466]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.3717, 0.513595, 0.59, 1)
+
+[node name="Main Container" type="MarginContainer" parent="Root" unique_id=964895300]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Main Vertical Container" type="VBoxContainer" parent="Root/Main Container" unique_id=1831478196]
+layout_mode = 2
+
+[node name="Header Margin" type="MarginContainer" parent="Root/Main Container/Main Vertical Container" unique_id=955773488]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Panel" type="Panel" parent="Root/Main Container/Main Vertical Container/Header Margin" unique_id=1642365376]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Root/Main Container/Main Vertical Container/Header Margin/Panel" unique_id=1634052184]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "HEADER LMAO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Body Margin" type="MarginContainer" parent="Root/Main Container/Main Vertical Container" unique_id=464885651]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Root/Main Container/Main Vertical Container/Body Margin" unique_id=1240629217]
+layout_mode = 2
+
+[node name="Charater Panel Margin" type="MarginContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer" unique_id=1754175964]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="TabContainer" type="TabContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin" unique_id=992821064]
+layout_mode = 2
+tab_alignment = 1
+current_tab = 0
+tab_0/title = "Character Sheet"
+tab_1/title = "Create"
+tab_2/title = "Load"
+
+[node name="Character Sheet Container" type="MarginContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer" unique_id=2011366400 node_paths=PackedStringArray("charNameText", "skillListContainer", "stressButtons", "stressBoxes")]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+script = ExtResource("2_0xm2m")
+charNameText = NodePath("MarginContainer/VBoxContainer/Name Container/Background/Name Text")
+skillListContainer = NodePath("MarginContainer/VBoxContainer/Skill List Margin/ScrollContainer/Skill Panel Container")
+stressButtons = [NodePath("MarginContainer/VBoxContainer/Stress Box Container/Stress Box Margin/HBoxContainer/HBoxContainer/Stress 1 Box/Stress 1 Button"), NodePath("MarginContainer/VBoxContainer/Stress Box Container/Stress Box Margin/HBoxContainer/HBoxContainer/Stress 2 Box/Stress 2 Button"), NodePath("MarginContainer/VBoxContainer/Stress Box Container/Stress Box Margin/HBoxContainer/HBoxContainer/Stress 3 Box/Stress 3 Button"), NodePath("MarginContainer/VBoxContainer/Stress Box Container/Stress Box Margin/HBoxContainer/HBoxContainer/Stress 4 Box/Stress 4 Button")]
+stressBoxes = [NodePath("MarginContainer/VBoxContainer/Stress Box Container/Stress Box Margin/HBoxContainer/HBoxContainer/Stress 1 Box"), NodePath("MarginContainer/VBoxContainer/Stress Box Container/Stress Box Margin/HBoxContainer/HBoxContainer/Stress 2 Box"), NodePath("MarginContainer/VBoxContainer/Stress Box Container/Stress Box Margin/HBoxContainer/HBoxContainer/Stress 3 Box"), NodePath("MarginContainer/VBoxContainer/Stress Box Container/Stress Box Margin/HBoxContainer/HBoxContainer/Stress 4 Box")]
+metadata/_tab_index = 0
+metadata/_tab_name = "Character Sheet"
+
+[node name="Background" type="Panel" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Character Sheet Container" unique_id=1189808865]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Character Sheet Container" unique_id=1852196550]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Character Sheet Container/MarginContainer" unique_id=1349006726]
+layout_mode = 2
+
+[node name="Name Container" type="MarginContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Character Sheet Container/MarginContainer/VBoxContainer" unique_id=836627695]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Background" type="Panel" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Character Sheet Container/MarginContainer/VBoxContainer/Name Container" unique_id=2023004330]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ig7tw")
+
+[node name="Name Text" type="Label" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Character Sheet Container/MarginContainer/VBoxContainer/Name Container/Background" unique_id=118598133]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "NAME LMAO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Skill List Margin" type="MarginContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Character Sheet Container/MarginContainer/VBoxContainer" unique_id=2101130352]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Character Sheet Container/MarginContainer/VBoxContainer/Skill List Margin" unique_id=1415469683]
+layout_mode = 2
+
+[node name="Skill Panel Container" type="VBoxContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Character Sheet Container/MarginContainer/VBoxContainer/Skill List Margin/ScrollContainer" unique_id=929929490]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Skill Panel" type="Panel" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Character Sheet Container/MarginContainer/VBoxContainer/Skill List Margin/ScrollContainer/Skill Panel Container" unique_id=1402425053 node_paths=PackedStringArray("skillNameText", "skillRankText", "skillLevelText", "skillLevelButton", "skillTimesUsedText", "skillUsedButton")]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_0xm2m")
+script = ExtResource("3_h2yge")
+skillNameText = NodePath("Skill Container/Skill Name Panel/Skill Name Text")
+skillRankText = NodePath("Skill Container/Skill Rank Panel/Skill Rank Text")
+skillLevelText = NodePath("Skill Container/Skill Level Panel/HBoxContainer/Skill Level Text")
+skillLevelButton = NodePath("Skill Container/Skill Level Panel/HBoxContainer/Level Up Button")
+skillTimesUsedText = NodePath("Skill Container/Skill Times Used Panel/HBoxContainer/Skill Times Used Text")
+skillUsedButton = NodePath("Skill Container/Skill Times Used Panel/HBoxContainer/Used Up Button")
+
+[node name="Skill Container" type="HBoxContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Character Sheet Container/MarginContainer/VBoxContainer/Skill List Margin/ScrollContainer/Skill Panel Container/Skill Panel" unique_id=1853189534]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_right = -3.0
+offset_bottom = -1.0120544
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Skill Name Panel" type="Panel" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Character Sheet Container/MarginContainer/VBoxContainer/Skill List Margin/ScrollContainer/Skill Panel Container/Skill Panel/Skill Container" unique_id=1736433507]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_h2yge")
+
+[node name="Skill Name Text" type="Label" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Character Sheet Container/MarginContainer/VBoxContainer/Skill List Margin/ScrollContainer/Skill Panel Container/Skill Panel/Skill Container/Skill Name Panel" unique_id=683884773]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.5
+offset_top = -11.5
+offset_right = 23.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+text = "NAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Skill Rank Panel" type="Panel" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Character Sheet Container/MarginContainer/VBoxContainer/Skill List Margin/ScrollContainer/Skill Panel Container/Skill Panel/Skill Container" unique_id=272595998]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_h2yge")
+
+[node name="Skill Rank Text" type="Label" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Character Sheet Container/MarginContainer/VBoxContainer/Skill List Margin/ScrollContainer/Skill Panel Container/Skill Panel/Skill Container/Skill Rank Panel" unique_id=1333208037]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.5
+offset_top = -11.5
+offset_right = 23.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+text = "RANK"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Skill Level Panel" type="Panel" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Character Sheet Container/MarginContainer/VBoxContainer/Skill List Margin/ScrollContainer/Skill Panel Container/Skill Panel/Skill Container" unique_id=197579663]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_h2yge")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Character Sheet Container/MarginContainer/VBoxContainer/Skill List Margin/ScrollContainer/Skill Panel Container/Skill Panel/Skill Container/Skill Level Panel" unique_id=1696939265]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -29.5
+offset_top = -11.5
+offset_right = 29.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Skill Level Text" type="Label" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Character Sheet Container/MarginContainer/VBoxContainer/Skill List Margin/ScrollContainer/Skill Panel Container/Skill Panel/Skill Container/Skill Level Panel/HBoxContainer" unique_id=1828041253]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+text = "LEVEL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level Up Button" type="Button" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Character Sheet Container/MarginContainer/VBoxContainer/Skill List Margin/ScrollContainer/Skill Panel Container/Skill Panel/Skill Container/Skill Level Panel/HBoxContainer" unique_id=310412598]
+visible = false
+layout_mode = 2
+text = "^"
+
+[node name="Skill Times Used Panel" type="Panel" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Character Sheet Container/MarginContainer/VBoxContainer/Skill List Margin/ScrollContainer/Skill Panel Container/Skill Panel/Skill Container" unique_id=508719587]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_h2yge")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Character Sheet Container/MarginContainer/VBoxContainer/Skill List Margin/ScrollContainer/Skill Panel Container/Skill Panel/Skill Container/Skill Times Used Panel" unique_id=1964863895]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -29.5
+offset_top = -11.5
+offset_right = 29.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Skill Times Used Text" type="Label" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Character Sheet Container/MarginContainer/VBoxContainer/Skill List Margin/ScrollContainer/Skill Panel Container/Skill Panel/Skill Container/Skill Times Used Panel/HBoxContainer" unique_id=1779035915]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+text = "USED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Used Up Button" type="Button" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Character Sheet Container/MarginContainer/VBoxContainer/Skill List Margin/ScrollContainer/Skill Panel Container/Skill Panel/Skill Container/Skill Times Used Panel/HBoxContainer" unique_id=53108724]
+visible = false
+layout_mode = 2
+text = "^"
+
+[node name="Border" type="Panel" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Character Sheet Container/MarginContainer/VBoxContainer/Skill List Margin/ScrollContainer/Skill Panel Container/Skill Panel" unique_id=841491264]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1bvp3")
+
+[node name="Stress Box Container" type="MarginContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Character Sheet Container/MarginContainer/VBoxContainer" unique_id=1727319540]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Panel" type="Panel" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Character Sheet Container/MarginContainer/VBoxContainer/Stress Box Container" unique_id=872872979]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_272bh")
+
+[node name="Stress Box Margin" type="MarginContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Character Sheet Container/MarginContainer/VBoxContainer/Stress Box Container" unique_id=967704730]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Character Sheet Container/MarginContainer/VBoxContainer/Stress Box Container/Stress Box Margin" unique_id=188859713]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Character Sheet Container/MarginContainer/VBoxContainer/Stress Box Container/Stress Box Margin/HBoxContainer" unique_id=163695375]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 0.2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+text = "STRESS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Character Sheet Container/MarginContainer/VBoxContainer/Stress Box Container/Stress Box Margin/HBoxContainer" unique_id=345383646]
+custom_minimum_size = Vector2(100, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.99
+alignment = 1
+
+[node name="Stress 1 Box" type="ColorRect" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Character Sheet Container/MarginContainer/VBoxContainer/Stress Box Container/Stress Box Margin/HBoxContainer/HBoxContainer" unique_id=2125721820]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.99999994, 0.19275567, 0.13051519, 0.5882353)
+metadata/ColorNormal = Color(0, 0.64705884, 0.22745098, 0.39215687)
+metadata/ColorStagger = Color(0.9529412, 0.6745098, 0, 0.5882353)
+metadata/ColorDamage = Color(1, 0.19215687, 0.12941177, 0.5882353)
+
+[node name="Stress 1 Button" type="Button" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Character Sheet Container/MarginContainer/VBoxContainer/Stress Box Container/Stress Box Margin/HBoxContainer/HBoxContainer/Stress 1 Box" unique_id=1684082091]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5vw27")
+theme_override_styles/pressed = ExtResource("4_lquwl")
+theme_override_styles/hover = ExtResource("5_7mycd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_kek77")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4c57u")
+text = "1"
+icon_alignment = 1
+
+[node name="Stress 2 Box" type="ColorRect" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Character Sheet Container/MarginContainer/VBoxContainer/Stress Box Container/Stress Box Margin/HBoxContainer/HBoxContainer" unique_id=1078123403]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.99999994, 0.19275567, 0.13051519, 0.5882353)
+metadata/ColorNormal = Color(0, 0.64705884, 0.22745098, 0.39215687)
+metadata/ColorStagger = Color(0.9529412, 0.6745098, 0, 0.5882353)
+metadata/ColorDamage = Color(1, 0.19215687, 0.12941177, 0.5882353)
+
+[node name="Stress 2 Button" type="Button" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Character Sheet Container/MarginContainer/VBoxContainer/Stress Box Container/Stress Box Margin/HBoxContainer/HBoxContainer/Stress 2 Box" unique_id=1242521896]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5vw27")
+theme_override_styles/pressed = ExtResource("4_lquwl")
+theme_override_styles/hover = ExtResource("5_7mycd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_kek77")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4c57u")
+text = "2"
+
+[node name="Stress 3 Box" type="ColorRect" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Character Sheet Container/MarginContainer/VBoxContainer/Stress Box Container/Stress Box Margin/HBoxContainer/HBoxContainer" unique_id=1111149287]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.99999994, 0.19275567, 0.13051519, 0.5882353)
+metadata/ColorNormal = Color(0, 0.64705884, 0.22745098, 0.39215687)
+metadata/ColorStagger = Color(0.9529412, 0.6745098, 0, 0.5882353)
+metadata/ColorDamage = Color(1, 0.19215687, 0.12941177, 0.5882353)
+
+[node name="Stress 3 Button" type="Button" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Character Sheet Container/MarginContainer/VBoxContainer/Stress Box Container/Stress Box Margin/HBoxContainer/HBoxContainer/Stress 3 Box" unique_id=1596279441]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5vw27")
+theme_override_styles/pressed = ExtResource("4_lquwl")
+theme_override_styles/hover = ExtResource("5_7mycd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_kek77")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4c57u")
+text = "3"
+
+[node name="Stress 4 Box" type="ColorRect" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Character Sheet Container/MarginContainer/VBoxContainer/Stress Box Container/Stress Box Margin/HBoxContainer/HBoxContainer" unique_id=233189581]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.99999994, 0.19275567, 0.13051519, 0.5882353)
+metadata/ColorNormal = Color(0, 0.64705884, 0.22745098, 0.39215687)
+metadata/ColorStagger = Color(0.9529412, 0.6745098, 0, 0.5882353)
+metadata/ColorDamage = Color(1, 0.19215687, 0.12941177, 0.5882353)
+
+[node name="Stress 4 Button" type="Button" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Character Sheet Container/MarginContainer/VBoxContainer/Stress Box Container/Stress Box Margin/HBoxContainer/HBoxContainer/Stress 4 Box" unique_id=579032811]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5vw27")
+theme_override_styles/pressed = ExtResource("4_lquwl")
+theme_override_styles/hover = ExtResource("5_7mycd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_kek77")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4c57u")
+text = "4"
+
+[node name="Consequence Container" type="MarginContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Character Sheet Container/MarginContainer/VBoxContainer" unique_id=1672247077]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.7
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="ColorRect" type="ColorRect" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Character Sheet Container/MarginContainer/VBoxContainer/Consequence Container" unique_id=672354141]
+visible = false
+layout_mode = 2
+color = Color(2.8878452e-07, 0.6427237, 0.2792825, 1)
+
+[node name="Create Character Container" type="MarginContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer" unique_id=2120827313 node_paths=PackedStringArray("nameField", "skillInputContainer", "submitCharButton")]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+script = ExtResource("6_7mycd")
+nameField = NodePath("MarginContainer/VBoxContainer/Name Container/HBoxContainer/LineEdit")
+skillInputContainer = NodePath("MarginContainer/VBoxContainer/Skills Container/ScrollContainer/Create Skill Button Container")
+submitCharButton = NodePath("MarginContainer/VBoxContainer/Submit Container/Submit Character")
+metadata/_tab_index = 1
+metadata/_tab_name = "Create"
+
+[node name="Panel" type="Panel" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Create Character Container" unique_id=759005187]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Create Character Container" unique_id=1631800776]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Create Character Container/MarginContainer" unique_id=1587119989]
+layout_mode = 2
+
+[node name="Header Container" type="MarginContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Create Character Container/MarginContainer/VBoxContainer" unique_id=23835190]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Background" type="Panel" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Create Character Container/MarginContainer/VBoxContainer/Header Container" unique_id=1595138550]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ig7tw")
+
+[node name="Name Text" type="Label" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Create Character Container/MarginContainer/VBoxContainer/Header Container/Background" unique_id=366490436]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Character Creator"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Name Container" type="MarginContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Create Character Container/MarginContainer/VBoxContainer" unique_id=1959017031]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_right = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Create Character Container/MarginContainer/VBoxContainer/Name Container" unique_id=2123012739]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Create Character Container/MarginContainer/VBoxContainer/Name Container/HBoxContainer" unique_id=279193047]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Name:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Create Character Container/MarginContainer/VBoxContainer/Name Container/HBoxContainer" unique_id=918742813]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 30.0
+placeholder_text = "name"
+
+[node name="Skills Container" type="MarginContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Create Character Container/MarginContainer/VBoxContainer" unique_id=265480144]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_right = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Create Character Container/MarginContainer/VBoxContainer/Skills Container" unique_id=180384434]
+layout_mode = 2
+
+[node name="Create Skill Button Container" type="VBoxContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Create Character Container/MarginContainer/VBoxContainer/Skills Container/ScrollContainer" unique_id=208902366]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Submit Container" type="MarginContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Create Character Container/MarginContainer/VBoxContainer" unique_id=1033167647]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Submit Character" type="Button" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Create Character Container/MarginContainer/VBoxContainer/Submit Container" unique_id=1487788928]
+layout_mode = 2
+text = "Create Character"
+
+[node name="Load Character Container" type="MarginContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer" unique_id=1815849849]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+metadata/_tab_index = 2
+metadata/_tab_name = "Load"
+
+[node name="Panel" type="Panel" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Charater Panel Margin/TabContainer/Load Character Container" unique_id=747816059]
+layout_mode = 2
+
+[node name="Invoke Panel Margin" type="MarginContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer" unique_id=1994968843]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="TabContainer" type="TabContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Invoke Panel Margin" unique_id=1434152318]
+layout_mode = 2
+tab_alignment = 1
+current_tab = 0
+tab_0/title = "Invokes"
+tab_1/title = "Edit"
+tab_2/title = "Notes"
+
+[node name="Invoke Container" type="MarginContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Invoke Panel Margin/TabContainer" unique_id=1445078490]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+metadata/_tab_index = 0
+metadata/_tab_name = "Invokes"
+
+[node name="Panel" type="Panel" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Invoke Panel Margin/TabContainer/Invoke Container" unique_id=433826433]
+layout_mode = 2
+
+[node name="Edit Container" type="MarginContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Invoke Panel Margin/TabContainer" unique_id=1587050509]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+metadata/_tab_name = "Edit"
+
+[node name="Notes Container" type="MarginContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Invoke Panel Margin/TabContainer" unique_id=416829150]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+metadata/_tab_index = 2
+metadata/_tab_name = "Notes"
+
+[node name="Panel" type="Panel" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Invoke Panel Margin/TabContainer/Notes Container" unique_id=923816226]
+layout_mode = 2
+
+[node name="Roll Panel Margin" type="MarginContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer" unique_id=811774987]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="TabContainer" type="TabContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Roll Panel Margin" unique_id=2032170729]
+layout_mode = 2
+tab_alignment = 1
+current_tab = 0
+tab_0/title = "Skill Roll"
+tab_1/title = "Extra Rules"
+
+[node name="Skill Roll Container" type="MarginContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Roll Panel Margin/TabContainer" unique_id=725846311 node_paths=PackedStringArray("rollStyleContainer", "arbRollCodeInput", "arbRollSubmitButton", "outputCodeContainer", "copyCodeButton", "skillButtonContainer")]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+script = ExtResource("7_5vw27")
+rollStyleContainer = NodePath("VBoxContainer/Roll Stype Container/HBoxContainer/Roll Style Dropdown")
+arbRollCodeInput = NodePath("VBoxContainer/Arbitrary Roll Code Container/VBoxContainer/HBoxContainer/Arbitrary Roll Code Input")
+arbRollSubmitButton = NodePath("VBoxContainer/Arbitrary Roll Code Container/VBoxContainer/HBoxContainer/Arbitrary Roll Code Submit")
+outputCodeContainer = NodePath("VBoxContainer/Output Roll Code Container/VBoxContainer/Output Code")
+copyCodeButton = NodePath("VBoxContainer/Output Roll Code Container/VBoxContainer/Copy Code Button")
+skillButtonContainer = NodePath("VBoxContainer/Roll Skill Buttons Margin/VBoxContainer/Roll Skill Button Container")
+metadata/_tab_index = 0
+metadata/_tab_name = "Skill Roll"
+
+[node name="Background" type="Panel" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Roll Panel Margin/TabContainer/Skill Roll Container" unique_id=1896593067]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Roll Panel Margin/TabContainer/Skill Roll Container" unique_id=1750473468]
+layout_mode = 2
+
+[node name="Roll Stype Container" type="MarginContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Roll Panel Margin/TabContainer/Skill Roll Container/VBoxContainer" unique_id=1622639378]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Roll Panel Margin/TabContainer/Skill Roll Container/VBoxContainer/Roll Stype Container" unique_id=286142274]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Roll Panel Margin/TabContainer/Skill Roll Container/VBoxContainer/Roll Stype Container/HBoxContainer" unique_id=1818826420]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Roll Style:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Roll Style Dropdown" type="MenuButton" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Roll Panel Margin/TabContainer/Skill Roll Container/VBoxContainer/Roll Stype Container/HBoxContainer" unique_id=1082564378]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "TYPE"
+item_count = 5
+popup/item_0/text = "COMBAT"
+popup/item_0/id = 0
+popup/item_1/text = "NON COMBAT"
+popup/item_1/id = 1
+popup/item_2/text = "PREPARED"
+popup/item_2/id = 2
+popup/item_3/text = "DAZED"
+popup/item_3/id = 3
+popup/item_4/text = "DAZED + PREPARED"
+popup/item_4/id = 4
+script = ExtResource("7_272bh")
+
+[node name="Roll Skill Buttons Margin" type="MarginContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Roll Panel Margin/TabContainer/Skill Roll Container/VBoxContainer" unique_id=1900736491]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Roll Panel Margin/TabContainer/Skill Roll Container/VBoxContainer/Roll Skill Buttons Margin" unique_id=735394346]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Roll Panel Margin/TabContainer/Skill Roll Container/VBoxContainer/Roll Skill Buttons Margin/VBoxContainer" unique_id=1744506998]
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.1
+text = "Skill Buttons:"
+
+[node name="Roll Skill Button Container" type="VBoxContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Roll Panel Margin/TabContainer/Skill Roll Container/VBoxContainer/Roll Skill Buttons Margin/VBoxContainer" unique_id=701039049]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Arbitrary Roll Code Container" type="MarginContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Roll Panel Margin/TabContainer/Skill Roll Container/VBoxContainer" unique_id=1469531996]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Roll Panel Margin/TabContainer/Skill Roll Container/VBoxContainer/Arbitrary Roll Code Container" unique_id=436198362]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Roll Panel Margin/TabContainer/Skill Roll Container/VBoxContainer/Arbitrary Roll Code Container/VBoxContainer" unique_id=1212366543]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Arbitrary Roll Code:"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Roll Panel Margin/TabContainer/Skill Roll Container/VBoxContainer/Arbitrary Roll Code Container/VBoxContainer" unique_id=1854320399]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Arbitrary Roll Code Input" type="LineEdit" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Roll Panel Margin/TabContainer/Skill Roll Container/VBoxContainer/Arbitrary Roll Code Container/VBoxContainer/HBoxContainer" unique_id=1294980609]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="Arbitrary Roll Code Submit" type="Button" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Roll Panel Margin/TabContainer/Skill Roll Container/VBoxContainer/Arbitrary Roll Code Container/VBoxContainer/HBoxContainer" unique_id=375615165]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "SUBMIT"
+
+[node name="Output Roll Code Container" type="MarginContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Roll Panel Margin/TabContainer/Skill Roll Container/VBoxContainer" unique_id=1683015935]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Roll Panel Margin/TabContainer/Skill Roll Container/VBoxContainer/Output Roll Code Container" unique_id=340181318]
+layout_mode = 2
+
+[node name="Output Code" type="TextEdit" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Roll Panel Margin/TabContainer/Skill Roll Container/VBoxContainer/Output Roll Code Container/VBoxContainer" unique_id=98209911]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
+text = "OUTPUT CODE"
+editable = false
+emoji_menu_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+middle_mouse_paste_enabled = false
+empty_selection_clipboard_enabled = false
+wrap_mode = 1
+
+[node name="Copy Code Button" type="Button" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Roll Panel Margin/TabContainer/Skill Roll Container/VBoxContainer/Output Roll Code Container/VBoxContainer" unique_id=1175397672]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Copy Code"
+
+[node name="Extra Roll Container" type="MarginContainer" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Roll Panel Margin/TabContainer" unique_id=1813193620]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+metadata/_tab_index = 1
+metadata/_tab_name = "Extra Rules"
+
+[node name="Panel" type="Panel" parent="Root/Main Container/Main Vertical Container/Body Margin/HBoxContainer/Roll Panel Margin/TabContainer/Extra Roll Container" unique_id=1453425061]
+layout_mode = 2
+
+[node name="Footer Margin" type="MarginContainer" parent="Root/Main Container/Main Vertical Container" unique_id=1505918164]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Panel" type="Panel" parent="Root/Main Container/Main Vertical Container/Footer Margin" unique_id=1092365512]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Root/Main Container/Main Vertical Container/Footer Margin/Panel" unique_id=1001876773]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "FOOTER LMAO"
+horizontal_alignment = 1
+vertical_alignment = 1

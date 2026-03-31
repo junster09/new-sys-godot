@@ -1,0 +1,169 @@
+[gd_scene format=3 uid="uid://dih7du0qvwh6j"]
+
+[ext_resource type="Script" uid="uid://dprhgvnlbsxn" path="res://Scripts/Node Scripts/Skill_Panel.gd" id="1_px72r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xm2m"]
+bg_color = Color(0.48749998, 0.625625, 0.65, 1)
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h2yge"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_right = 3
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bvp3"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+
+[node name="Skill Panel" type="Panel" unique_id=1986761490 node_paths=PackedStringArray("skillNameText", "skillRankText", "skillLevelText", "skillLevelButton", "skillTimesUsedText", "skillUsedButton")]
+custom_minimum_size = Vector2(350, 30)
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_0xm2m")
+script = ExtResource("1_px72r")
+skillNameText = NodePath("Skill Container/Skill Name Panel/Skill Name Text")
+skillRankText = NodePath("Skill Container/Skill Rank Panel/Skill Rank Text")
+skillLevelText = NodePath("Skill Container/Skill Level Panel/HBoxContainer/Skill Level Text")
+skillLevelButton = NodePath("Skill Container/Skill Level Panel/HBoxContainer/Level Up Button")
+skillTimesUsedText = NodePath("Skill Container/Skill Times Used Panel/HBoxContainer/Skill Times Used Text")
+skillUsedButton = NodePath("Skill Container/Skill Times Used Panel/HBoxContainer/Used Up Button")
+
+[node name="Skill Container" type="HBoxContainer" parent="." unique_id=1849406013]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_right = -3.0
+offset_bottom = -1.0120544
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Skill Name Panel" type="Panel" parent="Skill Container" unique_id=1815706177]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_h2yge")
+
+[node name="Skill Name Text" type="Label" parent="Skill Container/Skill Name Panel" unique_id=837953082]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.5
+offset_top = -11.5
+offset_right = 23.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 15
+text = "NAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Skill Rank Panel" type="Panel" parent="Skill Container" unique_id=911899367]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_h2yge")
+
+[node name="Skill Rank Text" type="Label" parent="Skill Container/Skill Rank Panel" unique_id=725826440]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.5
+offset_top = -11.5
+offset_right = 23.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 15
+text = "RANK"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Skill Level Panel" type="Panel" parent="Skill Container" unique_id=881449194]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_h2yge")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Skill Container/Skill Level Panel" unique_id=28041749]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Skill Level Text" type="Label" parent="Skill Container/Skill Level Panel/HBoxContainer" unique_id=299516564]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 15
+text = "LEVEL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level Up Button" type="Button" parent="Skill Container/Skill Level Panel/HBoxContainer" unique_id=668802559]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+text = "^"
+
+[node name="Skill Times Used Panel" type="Panel" parent="Skill Container" unique_id=2044688020]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_h2yge")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Skill Container/Skill Times Used Panel" unique_id=1263824097]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Skill Times Used Text" type="Label" parent="Skill Container/Skill Times Used Panel/HBoxContainer" unique_id=1152952401]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 15
+text = "USED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Used Up Button" type="Button" parent="Skill Container/Skill Times Used Panel/HBoxContainer" unique_id=1344682632]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+text = "^"
+
+[node name="Border" type="Panel" parent="." unique_id=327137773]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1bvp3")
